@@ -49,10 +49,10 @@ class Overlay: MKTileOverlay {
 
                 } else {
 
-                    /* Create a function to call result() and pass that to an
+                    /* Create a closure that calls result() and pass that to an
                      * async URL load function like we do in MBXMapKit. */
 
-                    func callback(data: NSData?, error: NSError?) -> () {
+                    let callback = { (data: NSData?, error: NSError?) -> Void in
                         result(data, error)
                     }
 
